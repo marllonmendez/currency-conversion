@@ -4,56 +4,59 @@ import java.util.Scanner;
 
 public class Main {
 
+    private static final Scanner scanner = new Scanner(System.in);
+
     public static void menu() {
-        System.out.println("Welcome! To the currency converter!");
-        System.out.println("-----------------------------------");
+        System.out.println("Boas Vindas 😊");
         System.out.println("""
-                        [1] Dollar -> Argentine currency
-                        [2] Dollar -> Colombian currency
-                        [3] Dollar -> Real
-                        [4] EUR -> Dollar
-                        [5] EUR -> Argentine currency
-                        [6] EUR -> BRL
-                        [7] Exit
+                        -----------------------------------
+                        [1] Dólar -> Peso Argentino
+                        [2] Dólar -> Peso Colombiano
+                        [3] Dólar -> Real Brasileiro
+                        [4] Euro -> Dólar
+                        [5] Euro -> Peso Argentino
+                        [6] Euro -> Real Brasileiro
+                        [7] Sair
+                        -----------------------------------
                         """);
+        System.out.println("Escolha uma opção: ");
     }
 
     public static void connect(String baseValue, String targetValue) {
         try {
-            Scanner scanner = new Scanner(System.in);
 
-            System.out.println("How much? ");
+            System.out.println("Quanto? ");
             double value = scanner.nextDouble();
 
             ServiceAPI serviceAPI = new ServiceAPI(baseValue, targetValue, value);
         } catch (Exception e) {
-            System.out.println("Try again.");
-            System.out.println("Only numbers!");
+            System.out.println("Tente Novamente!");
+            System.out.println("Apenas Números!");
         }
     }
 
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        byte choice = 0;
+        byte option = 0;
 
         while (true) {
 
             try {
                 menu();
-                choice = scanner.nextByte();
+                option = scanner.nextByte();
             }
             catch (Exception e) {
-                System.out.println("Try again.");
-                System.out.println("Only numbers!");
+                System.out.println("Tente Novamente!");
+                System.out.println("Apenas Números!");
             }
 
-            if (choice == 7) {
-                System.out.println("Program successfully completed");
+            if (option == 7) {
+                System.out.println("Até a próxima 👋");
                 break;
             }
 
-            switch (choice)
+            switch (option)
             {
                 case 1:
                     connect("USD", "ARS");
@@ -74,7 +77,7 @@ public class Main {
                     connect("EUR", "BRL");
                     break;
                 default:
-                    System.out.println("Invalid option");
+                    System.out.println("Opção Invalida");
                     break;
             }
         }

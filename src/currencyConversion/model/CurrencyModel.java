@@ -7,11 +7,11 @@ public class CurrencyModel {
     private double valueConverted;
 
     public void info() {
-        System.out.printf("Converted value: %.2f.\n", this.valueConverted);
+        System.out.printf("Conversão: %.2f.\n", this.valueConverted);
     }
 
-    public void coin(CurencyRecord coinApi, double baseValue) {
-        this.targetValue = coinApi.conversion_rate();
+    public void coin(CurencyRecord curencyRecord, double baseValue) {
+        this.targetValue = curencyRecord.conversion_rate();
         calculator(baseValue);
     }
 
