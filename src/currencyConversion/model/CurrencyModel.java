@@ -7,7 +7,7 @@ public class CurrencyModel {
     private double valueConverted;
 
     public void info() {
-        System.out.printf("Conversão: %.2f.\n", this.valueConverted);
+        System.out.printf("Result: %.2f.\n", this.valueConverted);
     }
 
     public void coin(CurencyRecord curencyRecord, double baseValue) {

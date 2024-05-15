@@ -7,31 +7,31 @@ public class Main {
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void menu() {
-        System.out.println("Boas Vindas 😊");
+        System.out.println("Welcome");
         System.out.println("""
-                        -----------------------------------
-                        [1] Dólar -> Peso Argentino
-                        [2] Dólar -> Peso Colombiano
-                        [3] Dólar -> Real Brasileiro
-                        [4] Euro -> Dólar
-                        [5] Euro -> Peso Argentino
-                        [6] Euro -> Real Brasileiro
-                        [7] Sair
-                        -----------------------------------
-                        """);
-        System.out.println("Escolha uma opção: ");
+        -----------------------------------
+        [1] Dollar -> Argentine Peso
+        [2] Dollar -> Colombian Peso
+        [3] Dollar -> Brazilian Real
+        [4] Euro -> Dollar
+        [5] Euro -> Argentine Peso
+        [6] Euro -> Brazilian Real
+        [7] Exit
+        -----------------------------------
+        """);
+        System.out.println("Choose an option:");
     }
 
     public static void connect(String baseValue, String targetValue) {
         try {
 
-            System.out.println("Quanto? ");
+            System.out.println("How much is it: ");
             double value = scanner.nextDouble();
 
             ServiceAPI serviceAPI = new ServiceAPI(baseValue, targetValue, value);
         } catch (Exception e) {
             System.out.println("Tente Novamente!");
-            System.out.println("Apenas Números!");
+            System.out.println("Only numbers!");
         }
     }
 
@@ -47,12 +47,12 @@ public class Main {
                 option = scanner.nextByte();
             }
             catch (Exception e) {
-                System.out.println("Tente Novamente!");
-                System.out.println("Apenas Números!");
+                System.out.println("Try again!");
+                System.out.println("Only numbers!");
             }
 
             if (option == 7) {
-                System.out.println("Até a próxima 👋");
+                System.out.println("See you leter");
                 break;
             }
 
@@ -77,7 +77,7 @@ public class Main {
                     connect("EUR", "BRL");
                     break;
                 default:
-                    System.out.println("Opção Invalida");
+                    System.out.println("Invalid Option");
                     break;
             }
         }
