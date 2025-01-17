@@ -12,7 +12,9 @@
 ## Sobre
 Esté é um simples projeto que permite a conversão de valores entre algumas moedas, o objetivo principal é como implementar APIs externas dentro da nossa. O programa usa a API de taxas de câmbio para obter as taxas de conversão em tempo real.
 
-![Exemplo](assets/example.png)
+<div>
+    <img src="./assets/images/project.png" alt="Project" />
+</div>
 
 ## Funcionalidades
 
@@ -39,9 +41,7 @@ java -cp .\Dependencies\gson-2.10.1.jar .\src\Main.java
 Este é um badge conquistado por ter desenvolvido este projeto com a Alura em parceria da Oracle para o programa One **"Oracle Next Education"**
 
 <div align="center">
-
-  ![Badge](assets/badge.png)
-
+  <img src="./assets/images/badge.png" alt="Java Project Badge" />
 </div>
 
 ## Licença
